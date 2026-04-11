@@ -242,7 +242,7 @@ def build_sales_page(flet_page: ft.Page):
             "customer_id": customer_id,
             "name": customer_name.value,
             "contact": customer_contact.value,
-            "created_at": datetime.utcnow()
+            "created_at": datetime.now().strftime("%Y-%m-%d"),
         })
 
         total = sum(i["price"] * i["qty"] for i in cart)
@@ -259,7 +259,7 @@ def build_sales_page(flet_page: ft.Page):
                 "employee_id": employee_id.value,
                 "qty": item["qty"],
                 "total": item["price"] * item["qty"],
-                "date": datetime.utcnow()
+                "date": datetime.now().strftime("%Y-%m-%d")
             })
             update_product_stock(item["product_id"], item["qty"])
 

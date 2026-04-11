@@ -104,8 +104,8 @@ def open_add_product_dialog(page: ft.Page, refresh_callback, categories=[], supp
             "xyz_class":      field_xyz_class.value.strip(),
             "turnover_ratio": to_int(field_turnover_ratio.value),
             "risk_score":     to_int(field_risk_score.value),
-            "created_at":     datetime.now().isoformat(),
-            "updated_at":     datetime.now().isoformat(),
+            "created_at":     datetime.now(),
+            "updated_at":     datetime.now(),
         }
 
         add_product(new_product)
